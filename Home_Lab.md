@@ -2,8 +2,9 @@
 layout: default
 ---
 
-## Welcome to another page
+## Basic Home Lab
 
-_yay_
+This is a virtualized environment utilizing Virtualbox with a Kali Linux and Windows 10 machine. 
+
 
 [back](./)
