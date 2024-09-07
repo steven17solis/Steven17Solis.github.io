@@ -17,11 +17,13 @@ Click next a few times and finish the installation.
 
 When you open VirtualBox the following window will populate:
 
-
+![VB1](https://github.com/steven17solis/Steven17Solis.github.io/blob/main/VB1.PNG)
 
 ## Download and Install Kali Linux in VirtualBox
 
 Go to https://www.kali.org/get-kali/#kali-virtual-machines and download the Kali Linux VirtualBox image.
+
+![K2](https://github.com/steven17solis/Steven17Solis.github.io/blob/main/K2.PNG)
 
 Open your Downloads folder, right click and extract the VirtualBox image. 
 
@@ -29,7 +31,7 @@ In VirtualBox click on the Add button and navigate to the Downloads folder where
 
 The Kali Linux VM should be listed VirtualBox.
 
-
+![K1](https://github.com/steven17solis/Steven17Solis.github.io/blob/main/K1.PNG)
 
 ## Download and Install Windows 10 in VirtualBox
 
@@ -39,15 +41,27 @@ Run the MediaCreationTool file and click yes to to allow the app to make changes
 
 Next, agree to the terms of service then select the Create Installation Media option. 
 
+![W1](https://github.com/steven17solis/Steven17Solis.github.io/blob/main/W1.PNG)
+
 Click next a few times until you get to the Choose Which Media To Use page and select ISO file.
+
+![W2](https://github.com/steven17solis/Steven17Solis.github.io/blob/main/W2.PNG)
 
 Open VirtualBox and click on the New button. 
 
-Name the VM and in the ISO Image field click the drop down menu and navigate to Windows ISO image we just created. 
+Name the VM and in the ISO Image field click the drop down menu and navigate to Windows ISO image we just created.
+
+![W3](https://github.com/steven17solis/Steven17Solis.github.io/blob/main/W3.PNG)
 
 Click next and allocate 4 GB for RAM, leave Hard disk as VDI, and enter 50GB for the virtual hard disk size.
 
 Create and open the Windows 10 VM in VirtualBox to set up username and password and complete the installation.
+
+![W4](https://github.com/steven17solis/Steven17Solis.github.io/blob/main/W4.PNG)
+
+During the Windows setup, the wizard will ask for a product key. Select 'I don't have a product key' option at the bottom.
+
+![W5](https://github.com/steven17solis/Steven17Solis.github.io/blob/main/W5.PNG)
 
 ## Create Snapshot
 
@@ -55,16 +69,20 @@ Before testing on any VM it's best practice to create a snapshot. Snapshots allo
 
 To create a snapshot click on the stacked line icons next to the VM and select Snapshot.
 
+![VB2](https://github.com/steven17solis/Steven17Solis.github.io/blob/main/VB2.PNG)
+
 Click on Take and name the snapshot.
 
 Follow the same process for the other VM.
 
-If malware was executed and the VM needs to be restored, select the snapshot and click on Restore. 
+If malware was executed and the VM needs to be restored, select the snapshot and click on Restore.
+
+![VB3](https://github.com/steven17solis/Steven17Solis.github.io/blob/main/VB3.PNG)
 
 
+## Conclusion 
 
-
-
+I've built a few home labs before, but this one is the most simplistic and will serve as a good base for future projects. 
 
 
 
