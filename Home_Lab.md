@@ -49,7 +49,22 @@ Click next and allocate 4 GB for RAM, leave Hard disk as VDI, and enter 50GB for
 
 Create and open the Windows 10 VM in VirtualBox to set up username and password and complete the installation.
 
-## Configuring VMs
+## Create Snapshot
+
+Before testing on any VM it's best practice to create a snapshot. Snapshots allow us to revert our VM to a specific condition, so if malware is executed and breaks something you can start from the snapshot and everthing is good to go. 
+
+To create a snapshot click on the stacked line icons next to the VM and select Snapshot.
+
+Click on Take and name the snapshot.
+
+Follow the same process for the other VM.
+
+If malware was executed and the VM needs to be restored, select the snapshot and click on Restore. 
+
+
+
+
+
 
 
 
