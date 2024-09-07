@@ -2,7 +2,7 @@
 layout: default
 ---
 
-## Basic Home Lab
+### Basic Home Lab
 
 This is a virtualized environment utilizing VirtualBox with a Kali Linux VM and Windows 10 VM.
 
