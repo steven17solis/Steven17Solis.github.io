@@ -83,7 +83,7 @@ If malware was executed and the VM needs to be restored, select the snapshot and
 
 There are several different types of network configurations that could be used depending on the type of testing being done.
 
-![VB5](/Images/VB5.PNG)
+![VB5](/Images/VB5.png)
 
 ### NAT
 
