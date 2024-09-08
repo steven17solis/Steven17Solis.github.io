@@ -4,7 +4,7 @@ layout: default
 
 # ELK
 
-ELK is the combination of the following technologies:
+ELK is the combination of the following technologies
 
 E - Elasticsearch
 
