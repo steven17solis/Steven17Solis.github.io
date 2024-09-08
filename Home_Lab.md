@@ -17,7 +17,7 @@ Click next a few times and finish the installation.
 
 When you open VirtualBox the following window will populate:
 
-![VB1](https://github.com/steven17solis/Steven17Solis.github.io/VB1.PNG)
+![VB1](VB1.PNG)
 
 ## Download and Install Kali Linux in VirtualBox
 
