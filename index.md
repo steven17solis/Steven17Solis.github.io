@@ -12,3 +12,10 @@ The purpose of this project is to outline the steps I took to build a home lab f
 
 Installing and configuring ELK for threat hunting and detection. 
 
+
+# [Wazuh](./Wazuh.html)
+
+Installing and configuring Wazuh for threat detection and response.
+
+
+
