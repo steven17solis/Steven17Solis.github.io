@@ -59,7 +59,7 @@ Create and open the Windows 10 VM in VirtualBox to set up username and password 
 
 ![W4](W4.PNG)
 
-During the Windows setup, the wizard will ask for a product key. Select 'I don't have a product key' option at the bottom.
+During the Windows setup, the wizard will ask for a product key. Select I don't have a product key option at the bottom.
 
 ![W5](W5.PNG)
 
@@ -79,6 +79,27 @@ If malware was executed and the VM needs to be restored, select the snapshot and
 
 ![VB3](VB3.PNG)
 
+## Network Configuration
+
+There are several different types of network configurations that could be used depending on the type of testing being done.
+
+![VB5](/Images/VB5.PNG)
+
+### NAT
+
+NAT is the default networking mode in VirtualBox. In NAT mode, the VM operates in a private network and is assigned a virtual IP. The VMs configured with NAT are isolated and would not be able to communicate with other VMs.
+
+### NAT Network
+
+NAT Network is similar to NAT, but it provides a shared network between VMs, meaning any VM with this configuration can communicate with each other. To create a NAT Network select Tools then NAT Network, and hit Create. Name NAT Network and enter a IPv4 address.
+
+![VB4](/Images/VB4.PNG)
+
+### Internal Network 
+
+This type of configuration is useful for analyzing malware being that the VMs are connected to each other and completely isolated from the outside/external network. For this configuration we will need to statically assign an IP to each VM or setup a DHCP server. 
+
+I will cover this in another lab. 
 
 ## Conclusion 
 
