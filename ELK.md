@@ -20,7 +20,7 @@ Go to the following website https://cloud.elastic.co/registration and create an 
 
 Once account is verified, create a deployment.
 
-![ELK2](ELK2.PNG)
+![ELK2](/Images/ELK2.PNG)
 
 ## Installation
 
