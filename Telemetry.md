@@ -4,7 +4,7 @@ layout: default
 
 # Generating Telemetry
 
-In this lab I'll be simulating a attack on a VM to test and identify detection capabilities. 
+In this lab I'll be simulating a attack on a VM to generate telemetry and identify detection capabilities. 
 
 For this lab we will be using a Windows VM with Wazuh installed and Invoke-Atomic to simulate an attack. 
 
