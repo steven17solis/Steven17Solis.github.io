@@ -75,7 +75,65 @@ Clicking on the magnifying glass next to the timestamp, the Document Details win
 With this information, we can confirm Wazuh was able to detect the Atomic Red Team attack simulation. 
 
 
+After running any attack simulation, it's best practice to run a cleanup command to remove any temporary files generated or to return settings to their previous state.
+
+```
+Invoke-AtomicTest T1614.001 -TestNumbers 2 -Cleanup
+```
+
 ## Kali Linux
+
+Before testing, we need to turn off Windows Defender and enable RDP. Once this is done spin up the Kali VM.
+
+Open the terminal and ping the two VMs to make sure they are communicating. 
+
+
+
+
+Next run the following nmap command to see any open ports and services. 
+
+```
+nmap -A
+```
+
+We see RDP is open, let's try and brute force it and see what alerts we get in Wazuh.
+
+I'll be using crowbar to perform the brute force attack and the rockyou.txt file. To read more info on crowbar go to the following link https://www.kali.org/tools/crowbar/ .
+
+Before runing the command, we need to convert the rockyou.txt file t UTF-8. To do this run the following command.
+
+```
+iconv -f ISO-8859-1 -t UTF-8 rockyou.txt > rockyouutf8.txt
+```
+
+
+
+
+Now run crowbar.
+
+```
+crowbar -b rdp -s VM IP -u VM USERNAME -C rockyouutf8.txt
+```
+
+Switching back to Wazuh, we can see Logon Failure alerts.
+
+
+
+Opening the document details we can see the Kali VM which confirms Wazuh detected the attack.
+
+If we open up the Multiple Windows Logon Failures log we can also see Wazuh detected this as a Brute Force attack.
+
+
+
+## Conclusion
+
+This lab demonstrates how we preformed simluated attacks with Atomic Red Team and a brute force attack with Kali Linux to generate telemetry and see if Wazuh was able to detect it.
+
+It took me a while to navigate the Threat Hunting dashboard in wazuh, but once I understood how to filter for certain columns it started to make sense. 
+
+Will need to practice more on filtering to make threat hunting easier, and eventually create custom dashboards.
+
+
 
 
 
