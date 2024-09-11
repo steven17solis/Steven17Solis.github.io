@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Generating Telemetry
+# Generating Telemetry and Wazuh Detection
 
 In this lab I'll be simulating a attack on a VM to generate telemetry and identify detection capabilities. 
 
@@ -86,7 +86,7 @@ Invoke-AtomicTest T1614.001 -TestNumbers 2 -Cleanup
 
 ## Kali Linux
 
-Before testing, we need to turn off Windows Defender and enable RDP. Once this is done spin up the Kali VM.
+Before testing, we need to turn off Windows Defender and enable RDP. Having Windows Defender on will not allow us to ping the Windows VM and run an nmap scan from the Kali Vm. Once this is done spin up the Kali VM.
 
 Open the terminal and ping the two VMs to make sure they are communicating. 
 
