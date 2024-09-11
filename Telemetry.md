@@ -38,15 +38,17 @@ The following screenshot shows a successful installation.
 
 Once Invoke-Atomic is installed we can start simulating attacks on the VM to generate telemetry and see what alerts will be triggered in Wazuh. 
 
-I will be using attack reference T1003 -6 which is a credential dumping attack utilizing kmgr.dll and rund1132.exe.
+I will be using attack reference T1614.001 -2 which is a command to identify system languages.
 
 Run the following command in PowerShell to start the simulation. 
 
 ```
-Invoke-AtomicTest T1003 -TestNumbers 6
+Invoke-AtomicTest T1614.001 -TestNumbers 2
 ```
 
-Starting the simulation, the Stored User Names and Password application will be triggered.
+Go back to Wazuh and open the Threat Hunting page. 
+
+
 
 
 
