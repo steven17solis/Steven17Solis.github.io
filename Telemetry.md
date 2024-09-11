@@ -40,13 +40,51 @@ Once Invoke-Atomic is installed we can start simulating attacks on the VM to gen
 
 I will be using attack reference T1614.001 -2 which is a command to identify system languages.
 
+
+
 Run the following command in PowerShell to start the simulation. 
 
 ```
 Invoke-AtomicTest T1614.001 -TestNumbers 2
 ```
 
-Go back to Wazuh and open the Threat Hunting page. 
+Open Wazuh and navigate to the Overview page.
+
+
+
+
+Here we can get an overview of security related incidents and activities for the environment. 
+
+From here open the Threat Hunting page. In this page we can proactively search for any security alerts that may indicate a compromise. 
+
+
+
+Scrolling down we can see the log of recent security alerts. There are a few default fields selected, we're going to add the data.win.eventdata.commandLine to the columns.
+
+This value shows us what command is being excuted. 
+
+
+Upon added the field we see the command that was executed by Atomic Red Team attack simulation. 
+
+
+Clicking on the magnifying glass next to the timestamp, the Document Details window pops up giving us more information abut the alert. 
+
+
+
+
+With this information, we can confirm Wazuh was able to detect the Atomic Red Team attack simulation. 
+
+
+## Kali Linux
+
+
+
+
+
+
+
+
+
 
 
 
