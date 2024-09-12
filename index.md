@@ -18,7 +18,7 @@ Installing and configuring ELK for threat hunting and detection.
 Installing and configuring Wazuh for threat detection and response.
 
 
-# [Generating Telemetry](./Telemetry.html)
+# [Generating Telemetry and Wazuh Detection](./Telemetry.html)
 
 The purpose of this lab is to generate telemetry to detect threats. 
 
