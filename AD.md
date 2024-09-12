@@ -2,8 +2,8 @@
 layout: default
 ---
 
-## Welcome to another page
+# Active Directory Lab
 
-_yay_
+
 
 [back](./)
