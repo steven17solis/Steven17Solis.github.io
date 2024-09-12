@@ -23,3 +23,6 @@ Installing and configuring Wazuh for threat detection and response.
 The purpose of this lab is to generate telemetry to detect threats. 
 
 
+# [Active Directory Lab](./AD.html)
+
+Deploy an Active Directory lab with Snaplabs.
