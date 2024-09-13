@@ -23,4 +23,6 @@ Installing and configuring Wazuh for threat detection and response.
 The purpose of this lab is to generate telemetry to detect threats. 
 
 
+# [TryHackMe - Attacktive Directory](./Attacktive.html)
 
+The is a writeup of TryHackMe's Attacktive Directory CTF.
