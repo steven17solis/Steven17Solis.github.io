@@ -10,6 +10,7 @@ This post is a writeup of the TryHackMe Attacktive Directory CTF. In this CTF we
 ## Enumeration - Welcome to Attacktive Directory
 
 Questions 
+
 *   What tool will allow us to enumerate port 139/445?
 *   What is the NetBIOS-Domain Name of the Machine?
 *   What invalid TLD do people commonly use for their Active Directory Domain?
